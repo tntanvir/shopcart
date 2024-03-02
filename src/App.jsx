@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Shop from "./Component/Shop";
 import ItemDtl from "./Component/ItemDtl";
+import { Footer } from "./Component/Footer";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/shop/:id' element={<ItemDtl />} />
           <Route path='/blog' element={<Blog />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   )

@@ -93,7 +93,7 @@ const Homeshowcase = () => {
 
     }
     return (
-        <div className="min-h-screen bim flex flex-col items-center pt-10" >
+        <div className="min-h-screen bim flex flex-col items-center pb-5 pt-10" >
             <div className="w-11/12 bg-white p-3 shadow-lg rounded-md flex justify-between px-10 items-center">
                 <Typography variant="h3">{title}</Typography>
                 <ul className="flex gap-1 justify-center items-center">

@@ -2,6 +2,9 @@ import React from 'react'
 import Hero from './Hero'
 import { Homecatagory } from './Homecatagory'
 import Homeshowcase from './Homeshowcase'
+import HomeLogin from './HomeLogin'
+import MapLocation from './MapLocation'
+import Brand from './Brand'
 
 const Home = () => {
     return (
@@ -9,6 +12,9 @@ const Home = () => {
             <Hero />
             <Homecatagory />
             <Homeshowcase />
+            <HomeLogin />
+            <MapLocation />
+            <Brand />
         </div>
     )
 }
