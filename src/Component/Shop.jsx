@@ -2,6 +2,7 @@ import TopBanner from './TopBanner';
 import data from '../products.json';
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { FaShoppingCart, FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { Rating } from '@material-tailwind/react';
 import { Typography } from '@material-tailwind/react';
@@ -11,7 +12,7 @@ const Shop = () => {
     const [itm, setItm] = useState(data);
     const [sData, setSdata] = useState(data);
     const [inp, setInp] = useState('');
-
+    const [cpro, setCpro] = useState();
     //--------------------
     const [dataa, setDataa] = useState(data);
     const [bool, setBool] = useState(true);
@@ -57,11 +58,58 @@ const Shop = () => {
                     <div className='flex flex-wrap justify-around gap-2 py-3'>
                         {
                             bool ? crunntProduct.map((e) => (
-                                <div key={e.id} className="shadow-md   w-72 rounded-md overflow-hidden flex flex-col justify-center cursor-pointer bg-white">
-                                    <Link to={`/shop/${e.id}`}>
-                                        <div className="h-64 overflow-hidden ">
+                                <div key={e.id} className="shadow-md   w-72 rounded-md overflow-hidden flex flex-col justify-start cursor-pointer  ">
 
-                                            <img src={e.img} alt="" className="hover:scale-110 duration-500" loading='lazy' />
+                                    <div className="h-64 overflow-hidden relative">
+                                        <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
+                                        <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
+                                            <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                                <FaShoppingCart />
+                                            </span>
+                                            <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                                <Link to={`/shop/${e.id}`}>
+
+                                                    <FaExternalLinkAlt />
+                                                </Link>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                    <div className="p-5 ">
+
+                                        <div className="flex justify-between">
+                                            <h1>{e.category}</h1>
+                                            <Rating value={e.ratings} readonly />
+                                        </div>
+                                        <div>
+                                            <h1>{e.name}</h1>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <h1>{e.seller}</h1>
+                                            <h1 className="font-bold"> {e.price}</h1>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            ))
+                                :
+                                dataa.map((e) => (
+                                    <div key={e.id} className="shadow-md   w-72 rounded-md overflow-hidden flex flex-col justify-start cursor-pointer  ">
+
+                                        <div className="h-64 overflow-hidden relative">
+                                            <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
+                                            <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
+                                                <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                                    <FaShoppingCart />
+                                                </span>
+                                                <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                                    <Link to={`/shop/${e.id}`}>
+
+                                                        <FaExternalLinkAlt />
+                                                    </Link>
+                                                </span>
+
+                                            </div>
                                         </div>
                                         <div className="p-5 ">
 
@@ -77,32 +125,7 @@ const Shop = () => {
                                                 <h1 className="font-bold"> {e.price}</h1>
                                             </div>
                                         </div>
-                                    </Link>
-                                </div>
-                            ))
-                                :
-                                dataa.map((e) => (
-                                    <div key={e.id} className="shadow-md   w-72 rounded-md overflow-hidden flex flex-col justify-center cursor-pointer bg-white">
-                                        <Link to={`/shop/${e.id}`}>
-                                            <div className="h-64 overflow-hidden ">
 
-                                                <img src={e.img} alt="" className="hover:scale-110 duration-500" loading='lazy' />
-                                            </div>
-                                            <div className="p-5 ">
-
-                                                <div className="flex justify-between">
-                                                    <h1>{e.category}</h1>
-                                                    <Rating value={e.ratings} readonly />
-                                                </div>
-                                                <div>
-                                                    <h1>{e.name}</h1>
-                                                </div>
-                                                <div className="flex justify-between">
-                                                    <h1>{e.seller}</h1>
-                                                    <h1 className="font-bold"> {e.price}</h1>
-                                                </div>
-                                            </div>
-                                        </Link>
                                     </div>
                                 ))
 
