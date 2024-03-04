@@ -1,8 +1,12 @@
 import React from 'react'
+import TopBanner from './TopBanner'
 
 const About = () => {
     return (
-        <div>About</div>
+        <div className='min-h-screen'>
+
+            <TopBanner title={"About"} />
+        </div>
     )
 }
 

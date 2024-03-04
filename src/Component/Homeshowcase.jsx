@@ -122,6 +122,7 @@ const Homeshowcase = () => {
                                             <FaStar className="text-primary" />
                                             <FaStar className="text-primary" />
                                             <FaStar className="text-primary" />
+                                            <FaStar className="text-primary" />
                                         </div>
                                     </div>
                                     <div>

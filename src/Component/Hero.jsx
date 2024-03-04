@@ -49,7 +49,7 @@ const Hero = () => {
                 </DialogHeader>
                 <DialogBody className="h-[26rem] overflow-y-scroll flex flex-wrap justify-center gap-2">
                     {
-                        sValue && product.map((e, i) => (
+                        product && product.map((e, i) => (
                             <Link key={i} to={`shop/${e.id}`}>
                                 <li className="h-12 border flex items-center p-1 cursor-pointer hover:bg-primary hover:text-white rounded-md duration-150" >{e.name}</li>
                             </Link>
