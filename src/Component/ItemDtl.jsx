@@ -9,6 +9,8 @@ import { Input } from '@material-tailwind/react';
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { Button } from '@material-tailwind/react';
 import CatagoryAllData from './CatagoryAllData';
+import Itemreviwe from './Itemreviwe';
+
 const ItemDtl = () => {
     const { id } = useParams();
     const [itm, setItm] = useState([]);
@@ -95,6 +97,9 @@ const ItemDtl = () => {
                     </div>
                 )
             }
+            <div>
+                {itm && <Itemreviwe url={itm.img} />}
+            </div>
             {cta && <CatagoryAllData cta={cta} id={id} />}
         </div >
     )

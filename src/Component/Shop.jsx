@@ -8,6 +8,7 @@ import { Rating } from '@material-tailwind/react';
 import { Typography } from '@material-tailwind/react';
 import Pagination from './Pagination';
 import { Input } from '@material-tailwind/react';
+import ShortBlog from './ShortBlog';
 const Shop = () => {
     const [itm, setItm] = useState(data);
     const [sData, setSdata] = useState(data);
@@ -173,6 +174,9 @@ const Shop = () => {
                                 <li onClick={() => fillterItm("Bottle")} className="hover:bg-primary px-5 rounded-md py-1 bg-gray-200 cursor-pointer">Bottle</li>
                             </ul>
                         </div>
+                    </div>
+                    <div>
+                        <ShortBlog/>
                     </div>
                 </div>
             </div>
