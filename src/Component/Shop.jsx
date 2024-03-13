@@ -48,7 +48,7 @@ const Shop = () => {
         setCrunnt(num);
     }
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen '>
             <TopBanner title={"Shop "} />
             <div className='flex justify-around p-3'>
                 <div className='w-full flex flex-col justify-start items-center'>
@@ -176,7 +176,7 @@ const Shop = () => {
                         </div>
                     </div>
                     <div>
-                        <ShortBlog/>
+                        <ShortBlog />
                     </div>
                 </div>
             </div>

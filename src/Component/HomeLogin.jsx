@@ -1,11 +1,17 @@
 import {
     Card,
     Input,
-    Checkbox,
     Button,
     Typography,
 } from "@material-tailwind/react";
+import { useState } from "react";
 const HomeLogin = () => {
+
+    const [data, setData] = useState({ email: "", name: "", password: "" })
+    const change = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value })
+        console.log(data)
+    }
     return (
         <div className='hLogin h-[26rem] flex items-center justify-around pt-5'>
             <div>
@@ -26,6 +32,9 @@ const HomeLogin = () => {
                         </Typography>
                         <Input
                             size="lg"
+                            name="name"
+                            onChange={change}
+                            value={data.name}
                             placeholder="name@mail.com"
                             className="bg-white !border-t-blue-gray-200 focus:!border-t-gray-900  text-black z-30"
                             labelProps={{
@@ -37,6 +46,10 @@ const HomeLogin = () => {
                         </Typography>
                         <Input
                             size="lg"
+                            name="email"
+                            value={data.email}
+                            onChange={change}
+
                             placeholder="name@mail.com"
                             className="bg-white !border-t-blue-gray-200 focus:!border-t-gray-900 text-black z-30"
                             labelProps={{
@@ -48,6 +61,9 @@ const HomeLogin = () => {
                         </Typography>
                         <Input
                             type="password"
+                            name="password"
+                            value={data.password}
+                            onChange={change}
                             size="lg"
                             placeholder="********"
                             className="bg-white !border-t-blue-gray-200 focus:!border-t-gray-900 text-black z-30"

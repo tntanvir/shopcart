@@ -1,15 +1,11 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useEffect, useState, useContext } from 'react';
+import { useParams, Link } from 'react-router-dom'
 import products from "../products.json";
-import { Rating } from '@material-tailwind/react';
-import { Select, Option } from "@material-tailwind/react";
-import { Input } from '@material-tailwind/react';
+import { Select, Option, Rating, Input, Button } from "@material-tailwind/react";
 import { TiPlus, TiMinus } from "react-icons/ti";
-import { Button } from '@material-tailwind/react';
 import CatagoryAllData from './CatagoryAllData';
 import Itemreviwe from './Itemreviwe';
+import { contextAPI } from '../App';
 
 const ItemDtl = () => {
     const { id } = useParams();
@@ -20,6 +16,16 @@ const ItemDtl = () => {
     const [selSize, setSize] = useState("M");
     const [selCol, setCol] = useState("Black");
     const [cont, setCont] = useState('');
+    const [code, setCode] = useState('');
+
+    const [cartItem, setCartItem] = useContext(contextAPI);
+
+
+
+
+
+
+
     useEffect(() => {
         const pro = products.find(pr => pr.id === id);
         setItm(pro);
@@ -28,6 +34,25 @@ const ItemDtl = () => {
         setCont(1);
         // console.log(pro)
     }, [id])
+
+    const frmSubmit = () => {
+        const alData = {
+            ...itm, size: selSize, color: selCol, quantity: cont, discout: code, newprice: itm.price * cont
+        }
+
+        const existingItemIndex = cartItem.findIndex(item => item.id === id);
+
+        if (existingItemIndex !== -1) {
+
+            const updatedCartItem = [...cartItem];
+            updatedCartItem[existingItemIndex].quantity += cont;
+            setCartItem(updatedCartItem);
+        } else {
+
+            setCartItem([...cartItem, alData]);
+        }
+    }
+
 
     return (
         <div className='min-h-screen flex flex-col gap-10 p-5'>
@@ -52,8 +77,9 @@ const ItemDtl = () => {
 
                                 <Select
                                     label="Select Size"
+                                    name='size'
                                     value={selSize}
-                                    onChange={(val) => setSize(val)}
+                                    onChange={(e) => setSize(e)}
                                 >
                                     <Option value="M">M</Option>
                                     <Option value="L">L</Option>
@@ -85,12 +111,15 @@ const ItemDtl = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <Input variant='standard' label="Discound Code" placeholder='Discound Code' />
+                                    <Input value={code} onChange={(e) => setCode(e.target.value)} variant='standard' label="Discound Code" placeholder='Discound Code' />
                                 </div>
                             </div>
                             <div className='flex gap-4'>
-                                <Button>Add to Cart</Button>
-                                <Button>Check OUt</Button>
+                                <Button onClick={() => frmSubmit()}>Add to Cart</Button>
+                                <Link to={"/shop/cart"}>
+
+                                    <Button>Check OUt</Button>
+                                </Link>
                             </div>
 
                         </div>
