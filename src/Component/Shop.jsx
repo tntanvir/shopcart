@@ -87,7 +87,7 @@ const Shop = () => {
                                         </div>
                                         <div className="flex justify-between">
                                             <h1>{e.seller}</h1>
-                                            <h1 className="font-bold"> {e.price}</h1>
+                                            <h1 className="font-bold"> ${e.price}</h1>
                                         </div>
                                     </div>
 

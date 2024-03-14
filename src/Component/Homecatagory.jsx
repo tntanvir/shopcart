@@ -12,37 +12,38 @@ import {
 
 const categoryList = [
     {
-        imgUrl: 'src/assets/images/category/01.jpg',
+        // imgUrl: 'src/assets/images/category/01.jpg',
+        imgUrl: 'https://images.unsplash.com/photo-1526353142379-8e22db12876c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'DSLR Camera',
     },
     {
-        imgUrl: 'src/assets/images/category/02.jpg',
+        imgUrl: 'https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'Shoes',
     },
     {
-        imgUrl: 'src/assets/images/category/03.jpg',
+        imgUrl: 'https://plus.unsplash.com/premium_photo-1663957821802-4969fe6a0347?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'Photography',
     },
     {
-        imgUrl: 'src/assets/images/category/04.jpg',
+        imgUrl: 'https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'Formal Dress',
     },
     {
-        imgUrl: 'src/assets/images/category/05.jpg',
+        imgUrl: 'https://images.unsplash.com/photo-1613896640137-bb5b31496315?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'Colorful Bags',
     },
     {
-        imgUrl: 'src/assets/images/category/06.jpg',
+        imgUrl: 'https://plus.unsplash.com/premium_photo-1670360414946-e33a828d1d52?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         imgAlt: 'category rajibraj91 rajibraj',
         iconName: 'icofont-brand-windows',
         title: 'Home Decor',
@@ -72,7 +73,7 @@ export const Homecatagory = () => {
                                     className={`absolute inset-0 m-0 h-full w-full rounded-none  bg-cover bg-center`}
                                     style={{ backgroundImage: `url(${e.imgUrl})` }}
                                 >
-                                    <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-blue-500 from-5%" />
+                                    <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/25 from-0%" />
                                 </CardHeader>
                                 <CardBody className="relative text-center py-14 px-6 md:px-12  flex flex-col justify-center items-center">
                                     <Typography variant="h5" className="text-3xl text-primary">
