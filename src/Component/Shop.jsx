@@ -9,6 +9,8 @@ import { Typography } from '@material-tailwind/react';
 import Pagination from './Pagination';
 import { Input } from '@material-tailwind/react';
 import ShortBlog from './ShortBlog';
+import { useContext } from 'react';
+import { contextAPI } from '../App';
 const Shop = () => {
     const [itm, setItm] = useState(data);
     const [sData, setSdata] = useState(data);
@@ -47,6 +49,34 @@ const Shop = () => {
     const pagination = (num) => {
         setCrunnt(num);
     }
+    //context api
+
+    const [cartItem, setCartItem] = useContext(contextAPI);
+
+    const frmSubmit = (id) => {
+        const fin = itm.find(pd => pd.id === id);
+        const finlter = itm.filter(pd => pd.id === id);
+
+        const alData = {
+            ...fin, size: 'M', color: 'Black', quantity: 1, discout: '', newprice: fin.price * 1
+        }
+
+        const existingItemIndex = cartItem.findIndex(item => item.id === id);
+
+        if (existingItemIndex !== -1) {
+
+            const updatedCartItem = [...cartItem];
+            updatedCartItem[existingItemIndex].quantity += 1;
+            updatedCartItem[existingItemIndex].newprice += updatedCartItem[existingItemIndex].price;
+            setCartItem(updatedCartItem);
+            // console.log('find && add');
+        } else {
+
+            // console.log('NOT_find ');
+            setCartItem([...cartItem, alData]);
+        }
+    }
+
     return (
         <div className='min-h-screen '>
             <TopBanner title={"Shop "} />
@@ -64,7 +94,7 @@ const Shop = () => {
                                     <div className="h-64 overflow-hidden relative">
                                         <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
                                         <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
-                                            <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                            <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
                                                 <FaShoppingCart />
                                             </span>
                                             <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
