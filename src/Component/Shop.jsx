@@ -51,7 +51,7 @@ const Shop = () => {
     }
     //context api
 
-    const [cartItem, setCartItem] = useContext(contextAPI);
+    const { cartItem, setCartItem } = useContext(contextAPI);
 
     const frmSubmit = (id) => {
         const fin = itm.find(pd => pd.id === id);
@@ -130,7 +130,7 @@ const Shop = () => {
                                         <div className="h-64 overflow-hidden relative">
                                             <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
                                             <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
-                                                <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
+                                                <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
                                                     <FaShoppingCart />
                                                 </span>
                                                 <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">

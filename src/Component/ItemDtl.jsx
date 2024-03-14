@@ -18,7 +18,7 @@ const ItemDtl = () => {
     const [cont, setCont] = useState('');
     const [code, setCode] = useState('');
 
-    const [cartItem, setCartItem] = useContext(contextAPI);
+    const { cartItem, setCartItem } = useContext(contextAPI);
 
 
 
@@ -116,7 +116,7 @@ const ItemDtl = () => {
                             </div>
                             <div className='flex gap-4'>
                                 <Button onClick={() => frmSubmit()}>Add to Cart</Button>
-                                <Link to={"/shop/cart"}>
+                                <Link to={"/cart"}>
 
                                     <Button>Check OUt</Button>
                                 </Link>

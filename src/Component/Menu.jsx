@@ -31,7 +31,7 @@ function NavList() {
 
 export function Menu() {
   const [openNav, setOpenNav] = React.useState(false);
-  const [cartItem, setCartItem] = useContext(contextAPI);
+  const { cartItem, setCartItem } = useContext(contextAPI);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -49,12 +49,12 @@ export function Menu() {
             variant="h6"
             className="mr-4 cursor-pointer py-1.5 lg:ml-2 "
           >
-            <img src="../../public/lgo.png" className="h-8 md:h-12" />
+            <img src="/src/assets/images/logo/01.png" className="h-8 md:h-9" />
           </Typography>
         </Link>
         <div className="hidden gap-2 lg:flex items-center">
           <NavList />
-          <Link to={'/shop/cart'}>
+          <Link to={'/cart'}>
             <Badge content={cartItem.length} withBorder>
 
               <BsCart4 className="text-xl font-bold" />
@@ -82,7 +82,7 @@ export function Menu() {
 
           </IconButton>
 
-          <Link to={'/shop/cart'}>
+          <Link to={'/cart'}>
             <Badge content={cartItem.length} withBorder>
 
               <BsCart4 className="text-xl font-bold" />

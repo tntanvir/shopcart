@@ -14,14 +14,17 @@ import { Footer } from "./Component/Footer";
 import ShopingCart from "./Component/ShopingCart";
 import { createContext } from 'react';
 import { useState } from "react";
+import Private from "./Component/Privates/Private";
+import Login from "./Component/Firebase/Login";
 
 export const contextAPI = createContext();
 
 const App = () => {
   const [cartItem, setCartItem] = useState([]);
+  const [userLogin, setUserLogin] = useState([]);
   return (
     <>
-      <contextAPI.Provider value={[cartItem, setCartItem]}>
+      <contextAPI.Provider value={{ cartItem, setCartItem, userLogin, setUserLogin }}>
         <Router>
           <Menu />
           <Routes>
@@ -31,7 +34,15 @@ const App = () => {
             <Route path='/shop' element={<Shop />} />
             <Route path='/shop/:id' element={<ItemDtl />} />
             <Route path='/blog' element={<Blog />} />
-            <Route path='/shop/cart' element={<ShopingCart />} />
+            <Route path="/login" element={<Login />} />
+
+
+            <Route
+              path="/cart"
+              element={
+                <Private childern={<ShopingCart />} />
+              }
+            />
           </Routes>
           <Footer />
         </Router>

@@ -5,7 +5,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import { useEffect } from 'react';
 import { useState } from 'react';
 const ShopingCart = () => {
-    const [cartItem, setCartItem] = useContext(contextAPI);
+    const { cartItem, setCartItem } = useContext(contextAPI);
 
     const pluse = (id) => {
         const findIN = cartItem.findIndex(inx => inx.id === id);
