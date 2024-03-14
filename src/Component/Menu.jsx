@@ -49,7 +49,7 @@ export function Menu() {
             variant="h6"
             className="mr-4 cursor-pointer py-1.5 lg:ml-2 "
           >
-            <img src="/public/logo.png" className="h-8 md:h-12" />
+            <img src="../../public/lgo.png" className="h-8 md:h-12" />
           </Typography>
         </Link>
         <div className="hidden gap-2 lg:flex items-center">
@@ -67,18 +67,28 @@ export function Menu() {
             Sign In
           </Button>
         </div>
-        <IconButton
-          variant="text"
-          color="blue-gray"
-          className="lg:hidden"
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ?
-            <IoMdClose className="h-6 w-6" strokeWidth={2} />
-            :
-            <IoMdMenu className="h-6 w-6" strokeWidth={2} />
-          }
-        </IconButton>
+        <div className="lg:hidden">
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            className="lg:hidden"
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ?
+              <IoMdClose className="h-6 w-6" strokeWidth={2} />
+              :
+              <IoMdMenu className="h-6 w-6" strokeWidth={2} />
+            }
+
+          </IconButton>
+
+          <Link to={'/shop/cart'}>
+            <Badge content={cartItem.length} withBorder>
+
+              <BsCart4 className="text-xl font-bold" />
+            </Badge>
+          </Link>
+        </div>
       </div>
       <Collapse open={openNav} className="" onClick={() => setOpenNav(!openNav)}>
         <NavList />
