@@ -5,7 +5,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyB-hanmTd5gzzhFS4bAPQCPi8t0IMvak_E",
     authDomain: "edukon-shop.firebaseapp.com",
     projectId: "edukon-shop",
-    storageBucket: "edukon-shop.appspot.com",
+    storageBucket: "storageBucket",
     messagingSenderId: "832501466418",
     appId: "1:832501466418:web:9a1e0e3fe266d42d02432b"
 };

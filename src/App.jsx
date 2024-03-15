@@ -15,7 +15,8 @@ import ShopingCart from "./Component/ShopingCart";
 import { createContext } from 'react';
 import { useState } from "react";
 import Private from "./Component/Privates/Private";
-import Login from "./Component/Firebase/Login";
+import AuthLog from "./Component/Firebase/AuthLog";
+import Payment from "./Component/Payment";
 
 export const contextAPI = createContext();
 
@@ -34,7 +35,8 @@ const App = () => {
             <Route path='/shop' element={<Shop />} />
             <Route path='/shop/:id' element={<ItemDtl />} />
             <Route path='/blog' element={<Blog />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<AuthLog />} />
+            <Route path="/payment" element={<Payment />} />
 
 
             <Route

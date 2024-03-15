@@ -27,7 +27,7 @@ import { contextAPI } from "../../App";
 
 
 
-const Login = () => {
+const AuthLog = () => {
     const { userLogin, setUserLogin } = useContext(contextAPI);
     const navigate = useNavigate();
     const location = useLocation();
@@ -96,4 +96,13 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default AuthLog;
+// import React from 'react'
+
+// const AuthLog = () => {
+//     return (
+//         <div>AuthLog</div>
+//     )
+// }
+
+// export default AuthLog

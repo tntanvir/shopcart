@@ -11,6 +11,9 @@ import { Input } from '@material-tailwind/react';
 import ShortBlog from './ShortBlog';
 import { useContext } from 'react';
 import { contextAPI } from '../App';
+import { useNavigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+
 const Shop = () => {
     const [itm, setItm] = useState(data);
     const [sData, setSdata] = useState(data);
@@ -51,9 +54,10 @@ const Shop = () => {
     }
     //context api
 
-    const { cartItem, setCartItem } = useContext(contextAPI);
+    const { cartItem, setCartItem, userLogin, setUserLogin } = useContext(contextAPI);
 
     const frmSubmit = (id) => {
+
         const fin = itm.find(pd => pd.id === id);
         const finlter = itm.filter(pd => pd.id === id);
 
@@ -75,6 +79,7 @@ const Shop = () => {
             // console.log('NOT_find ');
             setCartItem([...cartItem, alData]);
         }
+
     }
 
     return (
@@ -94,9 +99,18 @@ const Shop = () => {
                                     <div className="h-64 overflow-hidden relative">
                                         <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
                                         <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
-                                            <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
-                                                <FaShoppingCart />
-                                            </span>
+                                            {
+                                                userLogin.email ? <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
+                                                    <FaShoppingCart />
+                                                </span>
+                                                    :
+                                                    <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" >
+                                                        <Link to={'/cart'}>
+                                                            <FaShoppingCart />
+                                                        </Link>
+                                                    </span>
+
+                                            }
                                             <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
                                                 <Link to={`/shop/${e.id}`}>
 
@@ -130,9 +144,18 @@ const Shop = () => {
                                         <div className="h-64 overflow-hidden relative">
                                             <img src={e.img} alt="" className="hover:scale-110 duration-500 absolute" loading='lazy' />
                                             <div className='absolute flex justify-center items-center w-full h-full backdrop-blur-sm opacity-0 transition-opacity hover:opacity-100 gap-3'>
-                                                <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
-                                                    <FaShoppingCart />
-                                                </span>
+                                                {
+                                                    userLogin.email ? <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" onClick={() => frmSubmit(e.id)}>
+                                                        <FaShoppingCart />
+                                                    </span>
+                                                        :
+                                                        <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl" >
+                                                            <Link to={'/cart'}>
+                                                                <FaShoppingCart />
+                                                            </Link>
+                                                        </span>
+
+                                                }
                                                 <span className="text-gray-900 bg-primary p-3 rounded-full text-2xl">
                                                     <Link to={`/shop/${e.id}`}>
 
