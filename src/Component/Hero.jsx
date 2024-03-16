@@ -28,9 +28,9 @@ const Hero = () => {
     const handleOpen = () => setOpen(!open);
     return (
         <div className="bgimg flex flex-col min-h-screen  justify-center">
-            <div className="flex justify-center items-center flex-col w-full gap-4">
-                <h1 className="text-black text-4xl">Search Your One From <span className="text-primary">Thousand</span> Of Products</h1>
-                <form action="" className="bg-transparent w-1/2 px-5 py-3 rounded-full flex gap-2 justify-between items-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] cursor-text" onClick={handleOpen}>
+            <div className="flex justify-center items-center flex-col w-full gap-4 px-2">
+                <h1 className="text-black text-2xl text-center md:text-4xl">Search Your One From <span className="text-primary">Thousand</span> Of Products</h1>
+                <form action="" className="bg-transparent md:w-1/2 w-full px-5 py-3 rounded-full flex gap-2 justify-between items-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] cursor-text" onClick={handleOpen}>
 
                     <h1>Search</h1>
 

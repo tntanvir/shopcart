@@ -136,7 +136,7 @@ const ShopingCart = () => {
                     </>
                     :
                     <div className='flex justify-center items-center'>
-                        <img src="/public/empty.png" alt="" srcset="" width={500} />
+                        <img src="/empty.png" alt="" srcset="" width={500} />
                     </div>
                 }
 

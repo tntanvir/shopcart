@@ -132,25 +132,25 @@ const Homeshowcase = () => {
 
     }
     return (
-        <div className="min-h-screen bim flex flex-col items-center pb-5 pt-10" >
-            <div className="w-11/12 bg-white p-3 shadow-lg rounded-md flex justify-between px-10 items-center">
+        <div className="min-h-screen bim flex flex-col items-center pb-5 pt-10 mb-5" >
+            <div className="w-11/12 bg-white p-3 shadow-lg rounded-md flex flex-col md:flex-row justify-between px-10 items-center">
                 <Typography variant="h3">{title}</Typography>
-                <ul className="flex gap-1 justify-center items-center">
-                    <li onClick={() => fillterItm("All")} className="hover:bg-primary px-5 rounded-md py-1 cursor-pointer">All</li>
-                    <li onClick={() => fillterItm("Shoes")} className="hover:bg-primary px-5 rounded-md py-1 cursor-pointer">Shoes</li>
-                    <li onClick={() => fillterItm("Bags")} className="hover:bg-primary px-5 rounded-md py-1 cursor-pointer">Bags</li>
-                    <li onClick={() => fillterItm("Cap")} className="hover:bg-primary px-5 rounded-md py-1 cursor-pointer">Cap</li>
-                    <li onClick={() => fillterItm("Bottle")} className="hover:bg-primary px-5 rounded-md py-1 cursor-pointer">Bottle</li>
+                <ul className="flex md:gap-1 gap-0 justify-center items-center">
+                    <li onClick={() => fillterItm("All")} className="hover:bg-primary md:px-5 px-2 rounded-md py-1 cursor-pointer">All</li>
+                    <li onClick={() => fillterItm("Shoes")} className="hover:bg-primary md:px-5 px-2 rounded-md py-1 cursor-pointer">Shoes</li>
+                    <li onClick={() => fillterItm("Bags")} className="hover:bg-primary md:px-5 px-2 rounded-md py-1 cursor-pointer">Bags</li>
+                    <li onClick={() => fillterItm("Cap")} className="hover:bg-primary md:px-5 px-2 rounded-md py-1 cursor-pointer">Cap</li>
+                    <li onClick={() => fillterItm("Bottle")} className="hover:bg-primary md:px-5 px-2 rounded-md py-1 cursor-pointer">Bottle</li>
                 </ul>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-5 pt-10">
                 {
                     data && data.map((e, i) => (
-                        <div key={i} className="shadow-md  w-72 rounded-md overflow-hidden flex flex-col justify-center cursor-pointer">
+                        <div key={i} className="shadow-md   md:w-72 w-64 rounded-md overflow-hidden flex flex-col justify-center cursor-pointer">
                             <Link to={`/shop/${e.id}`}>
-                                <div className="h-fit bg-red-700 overflow-hidden ">
+                                <div className="h-fit overflow-hidden ">
 
-                                    <img src={e.img} alt="" className="hover:scale-110 duration-500" />
+                                    <img src={e.img} alt="" className="hover:scale-110 duration-500 h-60 md:h-full w-full" />
                                 </div>
                                 <div className="p-5 ">
 

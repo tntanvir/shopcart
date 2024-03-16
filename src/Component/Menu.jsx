@@ -115,7 +115,13 @@ export function Menu() {
                 </Button>
               </div>}
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center justify-center gap-1">
+          <Link to={'/cart'}>
+              <Badge content={cartItem.length} withBorder>
+
+                <BsCart4 className="text-xl font-bold" />
+              </Badge>
+            </Link>
             <IconButton
               variant="text"
               color="blue-gray"
@@ -130,12 +136,7 @@ export function Menu() {
 
             </IconButton>
 
-            <Link to={'/cart'}>
-              <Badge content={cartItem.length} withBorder>
-
-                <BsCart4 className="text-xl font-bold" />
-              </Badge>
-            </Link>
+            
           </div>
         </div>
         <Collapse open={openNav} className="" onClick={() => setOpenNav(!openNav)}>

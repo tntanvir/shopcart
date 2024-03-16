@@ -46,11 +46,11 @@ const AuthLog = () => {
     }
 
     return (
-        <div className='h-screen flex flex-col gap-5 items-center justify-center'>
+        <div className='min-h-screen  flex flex-col gap-5 items-center justify-center px-1 py-5'>
             <Typography variant="h5" className="mb-6 flex">
-                <MdBloodtype className="flex justify-center items-center"></MdBloodtype>Red Drop
+                <MdBloodtype className="flex justify-center items-center"></MdBloodtype>EduKon
             </Typography>
-            <Card className="w-96">
+            <Card className="md:w-96 w-full ">
                 <CardHeader
                     variant="gradient"
                     color="gray"

@@ -18,7 +18,6 @@ const Shop = () => {
     const [itm, setItm] = useState(data);
     const [sData, setSdata] = useState(data);
     const [inp, setInp] = useState('');
-    const [cpro, setCpro] = useState();
     //--------------------
     const [dataa, setDataa] = useState(data);
     const [bool, setBool] = useState(true);
@@ -85,9 +84,9 @@ const Shop = () => {
     return (
         <div className='min-h-screen '>
             <TopBanner title={"Shop "} />
-            <div className='flex justify-around p-3'>
+            <div className='flex justify-around  md:flex-row flex-col-reverse p-3'>
                 <div className='w-full flex flex-col justify-start items-center'>
-                    <div className="w-11/12 bg-white p-3 shadow-lg rounded-md flex justify-between px-10 items-center">
+                    <div className="md:w-11/12 w-full bg-white p-3 shadow-lg rounded-md flex justify-between px-10 items-center">
                         <Typography >showing {firstParpage}-{LastParpage} of {data.length} result </Typography>
 
                     </div>
@@ -191,8 +190,12 @@ const Shop = () => {
                         pagination={pagination}
                         crunnt={crunnt}
                     />
+                    <div className='md:hidden block mt-6 '>
+                    <ShortBlog />
+
+                    </div>
                 </div>
-                <div className='border w-1/3 p-1 overflow-y-auto h-[260vh]'>
+                <div className='border md:m-0 mb-4 md:w-1/3 w-full p-1 overflow-y-auto md:h-[260vh] '>
                     <div className='pb-4'>
                         <div>
                             <Input size="md" label="Search" value={inp} onChange={(e) => type(e)} />
@@ -228,7 +231,7 @@ const Shop = () => {
                             </ul>
                         </div>
                     </div>
-                    <div>
+                    <div className='hidden md:block'>
                         <ShortBlog />
                     </div>
                 </div>

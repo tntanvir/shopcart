@@ -13,20 +13,22 @@ const HomeLogin = () => {
         console.log(data)
     }
     return (
-        <div className='hLogin h-[26rem] flex items-center justify-around pt-5'>
+        <div className='hidden hLogin md:h-[26rem] h-full  md:flex flex-col  md:flex-row items-center justify-around pt-5 px-2'>
             <div>
-                <h1 className="text-xl text-primary">save the day</h1>
-                <h1 className="text-3xl text-white">Join on Day Long Free Workshop for</h1>
-                <h1 className="text-3xl text-white">Advance <span className="text-primary">Mastering </span>On Sales</h1>
-                <p className="text-xl text-white">Limited Time Offer! Hurry Up</p>
+                <h1 className="text-xl md:text-start text-center text-primary">save the day</h1>
+                <h1 className="md:text-3xl text-2xl md:text-start text-center text-white">Join on Day Long Free Workshop for</h1>
+                <h1 className="md:text-3xl text-2xl md:text-start text-center text-white">Advance <span className="text-primary">Mastering </span>On Sales</h1>
+                <p className="text-xl md:text-start text-center text-white">Limited Time Offer! Hurry Up</p>
             </div>
-            <Card color="transparent" className="overflow-hidden h-96 relative py-5 px-2">
+
+            <Card color="transparent" className="overflow-hidden h-96 relative py-5 md:px-2">
                 <Typography variant="h4" color="black" className="text-black z-30">
                     Sign Up
                 </Typography>
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-white from-5% -z-0" />
+
+                <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-white from-5% -z-0 " />
                 <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96 ">
-                    <div className="mb-1 flex flex-col gap-2">
+                    <div className="mb-1 flex flex-col gap-2 px-1">
                         <Typography variant="h6" color="black" className="-mb-3 text-black z-30">
                             Your Name
                         </Typography>
@@ -84,7 +86,9 @@ const HomeLogin = () => {
                         </a>
                     </Typography>
                 </form>
+
             </Card>
+
         </div >
 
     )

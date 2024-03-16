@@ -38,8 +38,8 @@ let ReviewList = [
 const Itemreviwe = ({ url }) => {
     const [bol, setBol] = useState(true);
     return (
-        <div className='p-3 flex flex-col gap-10 '>
-            <div className='w-96'>
+        <div className='md:p-3 flex flex-col gap-10 '>
+            <div className='md:w-96 w-60'>
                 <Tabs value="Reviwe">
                     <TabsHeader>
                         <Tab value={"Reviwe"} onClick={() => setBol(true)} >
@@ -51,22 +51,22 @@ const Itemreviwe = ({ url }) => {
                     </TabsHeader>
                 </Tabs>
             </div>
-            <div className='flex  gap-2'>
-                <div className='w-3/4 '>
+            <div className='flex flex-col md:flex-row gap-5  md:gap-2'>
+                <div className='md:w-3/4 w-full '>
                     {
                         bol ?
-                            <div className=' flex flex-col gap-1.5'>
+                            <div className='flex flex-col gap-1.5'>
                                 {
                                     ReviewList?.map((e, i) => (
-                                        <div key={i} className='flex justify-center gap-10 rounded-md border p-1'>
+                                        <div key={i} className='flex md:flex-row flex-col justify-center gap-10 rounded-md border p-1'>
                                             <div className='flex justify-center items-center'>
 
                                                 <img src={e.imgUrl} alt={e.imgAlt} className='bg-black rounded-full' width={50} />
                                             </div>
-                                            <div className='w-10/12 flex justify-center flex-col gap-2'>
+                                            <div className='md:w-10/12 flex  w-full items-center justify-center flex-col gap-2'>
 
-                                                <div className='flex justify-between'>
-                                                    <div className='flex gap-9'>
+                                                <div className='flex md:flex-row flex-col justify-center items-center md:justify-between w-full'>
+                                                    <div className='flex md:gap-9 gap-2 md:flex-row flex-col justify-center md:justify-between items-center'>
                                                         <h1>{e.name}</h1>
                                                         <h1>{e.date}</h1>
                                                     </div>
@@ -86,12 +86,12 @@ const Itemreviwe = ({ url }) => {
                             </div>
                             :
                             <div>
-                                <div className='  p-8 shadow-xl rounded'>
+                                <div className=' w-full flex flex-col gap-2  md:p-8 shadow-xl rounded p-1'>
 
-                                    <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum explicabo nostrum pariatur quasi dolorem illo, distinctio deserunt voluptas accusantium dicta doloremque quo debitis tenetur aliquam modi consectetur consequuntur sit laborum blanditiis, corrupti ratione eaque magnam! Eligendi accusantium aperiam ad vitae veritatis numquam? Distinctio voluptatum, asperiores doloremque eius debitis, quo quod fugiat dolore unde assumenda iusto quaerat consequatur pariatur ipsum! Laboriosam?</p>
-                                    <div className='flex justify-between p-4 items-center'>
+                                    <p className=' text-justify'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum explicabo nostrum pariatur quasi dolorem illo, distinctio deserunt voluptas accusantium dicta doloremque quo debitis tenetur aliquam modi consectetur consequuntur sit laborum blanditiis, corrupti ratione eaque magnam! Eligendi accusantium aperiam ad vitae veritatis numquam? Distinctio voluptatum, asperiores doloremque eius debitis, quo quod fugiat dolore unde assumenda iusto quaerat consequatur pariatur ipsum! Laboriosam?</p>
+                                    <div className='flex justify-between md:p-4 items-center  md:flex-row flex-col-reverse gap-3'>
 
-                                        <ul className='flex flex-col gap-3'>
+                                        <ul className='flex flex-col gap-3 p-2'>
                                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quo?</li>
                                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quo?</li>
                                             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quo?</li>
@@ -101,7 +101,7 @@ const Itemreviwe = ({ url }) => {
                                         </ul>
                                         <div><img src={url} alt="" srcset="" width={300} className='rounded-md' /></div>
                                     </div>
-                                    <p className=''>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendis.Sapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendisSapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendis</p>
+                                    <p className=' text-justify'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendis.Sapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendisSapiente reprehenderit illum voluptate voluptatum facere provident accusamus maxime? Natus quaerat minus aut reiciendis</p>
 
                                 </div>
                             </div>

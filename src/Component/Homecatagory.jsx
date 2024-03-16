@@ -55,10 +55,10 @@ export const Homecatagory = () => {
     return (
         <div className='flex flex-col gap-10 justify-center items-center py-5'>
             <div className='pt-14 text-center'>
-                <p className='text-2xl text-primary'>{subTitle}</p>
-                <h1 className='text-4xl font-bold'>{title}</h1>
+                <p className='md:text-2xl text-xl text-primary'>{subTitle}</p>
+                <h1 className='md:text-4xl text-2xl font-bold'>{title}</h1>
             </div>
-            <div className='py-4 flex flex-wrap gap-6 justify-evenly items-center'>
+            <div className='py-4 px-3 flex flex-wrap gap-6 justify-evenly items-center'>
                 {
                     categoryList.map((e) => (
                         <Card key={e.title}
