@@ -61,7 +61,7 @@ const Itemreviwe = ({ url }) => {
                                         <div key={i} className='flex md:flex-row flex-col justify-center gap-10 rounded-md border p-1'>
                                             <div className='flex justify-center items-center'>
 
-                                                <img src={e.imgUrl} alt={e.imgAlt} className='bg-black rounded-full' width={50} />
+                                                <img src={`https://xsgames.co/randomusers/assets/avatars/male/${i + Math.floor(Math.random() * 50)}.jpg`} alt={e.imgAlt} className='bg-black rounded-full' width={50} />
                                             </div>
                                             <div className='md:w-10/12 flex  w-full items-center justify-center flex-col gap-2'>
 

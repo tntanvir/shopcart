@@ -7,7 +7,7 @@ const Pagination = ({ parPage, total, pagination, crunnt }) => {
         num.push(i);
     }
     return (
-        <ul className='flex md:gap-5 gap-1 overflow-scroll py-2 '>
+        <ul className='flex md:gap-5 gap-1 overflow-auto py-2 '>
             {
                 num.map((e) => (
                     <li key={e} onClick={() => pagination(e)}>

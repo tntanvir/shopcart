@@ -81,7 +81,7 @@ const ShopingCart = () => {
     };
     return (
         <>
-            <div className="min-h-screen p-10 space-y-6">
+            <div className="min-h-screen md:p-10 p-2 space-y-6">
                 {/* top part  */}
                 {cartItem.length ?
                     <>
@@ -91,11 +91,11 @@ const ShopingCart = () => {
                         </div>
                         <hr />
                         {/*  Cart  map */}
-                        <div className=''>
+                        <div className=' w-full'>
 
                             {cartItem?.map((item) => (
-                                <div key={item?.id} className="flex justify-between items-center border-b pb-6">
-                                    <div className="flex flex-wrap items-center gap-4">
+                                <div key={item?.id} className="flex md:flex-row flex-col justify-between items-center border-b pb-6  md:px-2">
+                                    <div className="flex flex-row items-center gap-4  md:w-fit w-full">
                                         <img className="w-[75px] h-[75px] rounded-lg bg-slate-500" src={item.img} alt="card navigate ui" />
                                         <div>
                                             <h5 className="text-lg font-medium">{item?.name}</h5>
@@ -103,7 +103,7 @@ const ShopingCart = () => {
                                         </div>
                                     </div>
                                     {/* item increase decrees  */}
-                                    <div className="flex flex-wrap items-center gap-4 md:gap-10">
+                                    <div className="flex flex-wrap items-center md:justify-end justify-center gap-4 md:gap-10  md:w-fit w-full">
                                         <div className="space-x-3 flex">
                                             <span className="py-1 px-2 hover:text-[#3EBFA4] text-xl duration-200 cursor-pointer" onClick={() => minus(item?.id)}>
                                                 <FaMinus />

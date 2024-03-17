@@ -17,6 +17,7 @@ import { useState } from "react";
 import Private from "./Component/Privates/Private";
 import AuthLog from "./Component/Firebase/AuthLog";
 import Payment from "./Component/Payment";
+import Notfound from "./Component/Notfound";
 
 export const contextAPI = createContext();
 
@@ -36,7 +37,8 @@ const App = () => {
             <Route path='/shop/:id' element={<ItemDtl />} />
             <Route path='/blog' element={<Blog />} />
             <Route path="/login" element={<AuthLog />} />
-            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment" element={<Private childern={<Payment />} />} />
+            <Route path="*" element={<Notfound />} />
 
 
             <Route

@@ -1,13 +1,12 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-    apiKey: "AIzaSyB-hanmTd5gzzhFS4bAPQCPi8t0IMvak_E",
-    authDomain: "edukon-shop.firebaseapp.com",
-    projectId: "edukon-shop",
-    storageBucket: "storageBucket",
-    messagingSenderId: "832501466418",
-    appId: "1:832501466418:web:9a1e0e3fe266d42d02432b"
+    apiKey: "AIzaSyBFftiL2akYLBzy2Hbfn0nqDj0QT01Yycc",
+    authDomain: "style-swap-f3778.firebaseapp.com",
+    projectId: "style-swap-f3778",
+    storageBucket: "style-swap-f3778.appspot.com",
+    messagingSenderId: "276723587943",
+    appId: "1:276723587943:web:db3e114196223c6e14adc2"
 };
 
 // Initialize Firebase

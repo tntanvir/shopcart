@@ -38,9 +38,9 @@ function NavList() {
 import auth from "./Firebase/firebase.config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { Navigate } from "react-router-dom";
+import { SiStylelint } from "react-icons/si";
 
-
-
+import { useSpring, animated, config } from 'react-spring';
 
 export function Menu() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -75,6 +75,18 @@ export function Menu() {
 
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
+  const firstTextStyles = useSpring({
+    from: { opacity: 0, transform: 'scale(0.5)' },
+    to: { opacity: 1, transform: 'scale(1)' },
+    config: config.wobbly,
+  });
+
+  const secondTextStyles = useSpring({
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    config: config.wobbly,
+    delay: 300, // Delay for the second text animation
+  });
   return (
     <>
       <Navbar className="mx-auto max-w-screen px-4 py-2 rounded-none
@@ -84,12 +96,20 @@ export function Menu() {
             console.log(userLogin)
           } */}
           <Link to='/'>
-            <Typography
+            {/* <Typography
               variant="h6"
               className="mr-4 cursor-pointer py-1.5 lg:ml-2 "
-            >
-              <img src="/src/assets/images/logo/01.png" className="h-8 md:h-9" />
-            </Typography>
+            > */}
+            <div className="flex items-center justify-center  text-black text-xl font-bold">
+              <SiStylelint />
+              <animated.span style={firstTextStyles} className="">
+                Style
+              </animated.span>
+              <animated.span style={secondTextStyles} className="bg-yellow-500  rounded">
+                Swap
+              </animated.span>
+            </div>
+            {/* </Typography> */}
           </Link>
           <div className="hidden gap-2 lg:flex items-center">
             <NavList />
@@ -116,7 +136,7 @@ export function Menu() {
               </div>}
           </div>
           <div className="lg:hidden flex items-center justify-center gap-1">
-          <Link to={'/cart'}>
+            <Link to={'/cart'}>
               <Badge content={cartItem.length} withBorder>
 
                 <BsCart4 className="text-xl font-bold" />
@@ -136,7 +156,7 @@ export function Menu() {
 
             </IconButton>
 
-            
+
           </div>
         </div>
         <Collapse open={openNav} className="" onClick={() => setOpenNav(!openNav)}>
