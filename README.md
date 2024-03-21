@@ -1,14 +1,14 @@
-#Home Page
+# Home Page
 <img src='./public/redme/Home.png'>
-#Shop Page
+
+# Shop Page
 <img src='./public/redme/Shop.png'>
-#Cart Page
 
+# Cart Page
 <img src='./public/redme/Cart.png'>
-#Payment Getway
 
+# Payment Getway
 <img src='./public/redme/Payment.png'>
 
-#Mobile
-
+# Mobile
 <img src='./public/redme/Mobile.png'>
