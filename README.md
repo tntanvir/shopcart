@@ -1,8 +1,14 @@
-# React + Vite
+#Home Page
+<img src='./public/redme/Home.png'>
+#Shop Page
+<img src='./public/redme/Shop.png'>
+#Cart Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src='./public/redme/Cart.png'>
+#Payment Getway
 
-Currently, two official plugins are available:
+<img src='./public/redme/Payment.png'>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Mobile
+
+<img src='./public/redme/Mobile.png'>
